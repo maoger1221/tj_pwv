@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tj.pwv.mapper.PwvMapper" >
+  <resultMap id="BaseResultMap" type="tj.pwv.pojo.Pwv" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="totalzen" property="totalzen" jdbcType="DECIMAL" />
+    <result column="wetzen" property="wetzen" jdbcType="DECIMAL" />
+    <result column="sigzen" property="sigzen" jdbcType="DECIMAL" />
+    <result column="PW" property="pw" jdbcType="DECIMAL" />
+    <result column="sigpw" property="sigpw" jdbcType="DECIMAL" />
+    <result column="press" property="press" jdbcType="DECIMAL" />
+    <result column="temp" property="temp" jdbcType="DECIMAL" />
+    <result column="ZHD" property="zhd" jdbcType="DECIMAL" />
+    <result column="gradNS" property="gradns" jdbcType="DECIMAL" />
+    <result column="sigNS" property="signs" jdbcType="DECIMAL" />
+    <result column="gradEW" property="gradew" jdbcType="DECIMAL" />
+    <result column="sigEW" property="sigew" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, date, totalzen, wetzen, sigzen, PW, sigpw, press, temp, ZHD, gradNS, sigNS, gradEW, 
+    sigEW
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="tj.pwv.pojo.PwvExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from pwv
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from pwv
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from pwv
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="tj.pwv.pojo.PwvExample" >
+    delete from pwv
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="tj.pwv.pojo.Pwv" >
+    insert into pwv (id, date, totalzen, 
+      wetzen, sigzen, PW, 
+      sigpw, press, temp, 
+      ZHD, gradNS, sigNS, 
+      gradEW, sigEW)
+    values (#{id,jdbcType=BIGINT}, #{date,jdbcType=TIMESTAMP}, #{totalzen,jdbcType=DECIMAL}, 
+      #{wetzen,jdbcType=DECIMAL}, #{sigzen,jdbcType=DECIMAL}, #{pw,jdbcType=DECIMAL}, 
+      #{sigpw,jdbcType=DECIMAL}, #{press,jdbcType=DECIMAL}, #{temp,jdbcType=DECIMAL}, 
+      #{zhd,jdbcType=DECIMAL}, #{gradns,jdbcType=DECIMAL}, #{signs,jdbcType=DECIMAL}, 
+      #{gradew,jdbcType=DECIMAL}, #{sigew,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="tj.pwv.pojo.Pwv" >
+    insert into pwv
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="totalzen != null" >
+        totalzen,
+      </if>
+      <if test="wetzen != null" >
+        wetzen,
+      </if>
+      <if test="sigzen != null" >
+        sigzen,
+      </if>
+      <if test="pw != null" >
+        PW,
+      </if>
+      <if test="sigpw != null" >
+        sigpw,
+      </if>
+      <if test="press != null" >
+        press,
+      </if>
+      <if test="temp != null" >
+        temp,
+      </if>
+      <if test="zhd != null" >
+        ZHD,
+      </if>
+      <if test="gradns != null" >
+        gradNS,
+      </if>
+      <if test="signs != null" >
+        sigNS,
+      </if>
+      <if test="gradew != null" >
+        gradEW,
+      </if>
+      <if test="sigew != null" >
+        sigEW,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalzen != null" >
+        #{totalzen,jdbcType=DECIMAL},
+      </if>
+      <if test="wetzen != null" >
+        #{wetzen,jdbcType=DECIMAL},
+      </if>
+      <if test="sigzen != null" >
+        #{sigzen,jdbcType=DECIMAL},
+      </if>
+      <if test="pw != null" >
+        #{pw,jdbcType=DECIMAL},
+      </if>
+      <if test="sigpw != null" >
+        #{sigpw,jdbcType=DECIMAL},
+      </if>
+      <if test="press != null" >
+        #{press,jdbcType=DECIMAL},
+      </if>
+      <if test="temp != null" >
+        #{temp,jdbcType=DECIMAL},
+      </if>
+      <if test="zhd != null" >
+        #{zhd,jdbcType=DECIMAL},
+      </if>
+      <if test="gradns != null" >
+        #{gradns,jdbcType=DECIMAL},
+      </if>
+      <if test="signs != null" >
+        #{signs,jdbcType=DECIMAL},
+      </if>
+      <if test="gradew != null" >
+        #{gradew,jdbcType=DECIMAL},
+      </if>
+      <if test="sigew != null" >
+        #{sigew,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="tj.pwv.pojo.PwvExample" resultType="java.lang.Integer" >
+    select count(*) from pwv
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update pwv
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.totalzen != null" >
+        totalzen = #{record.totalzen,jdbcType=DECIMAL},
+      </if>
+      <if test="record.wetzen != null" >
+        wetzen = #{record.wetzen,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sigzen != null" >
+        sigzen = #{record.sigzen,jdbcType=DECIMAL},
+      </if>
+      <if test="record.pw != null" >
+        PW = #{record.pw,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sigpw != null" >
+        sigpw = #{record.sigpw,jdbcType=DECIMAL},
+      </if>
+      <if test="record.press != null" >
+        press = #{record.press,jdbcType=DECIMAL},
+      </if>
+      <if test="record.temp != null" >
+        temp = #{record.temp,jdbcType=DECIMAL},
+      </if>
+      <if test="record.zhd != null" >
+        ZHD = #{record.zhd,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gradns != null" >
+        gradNS = #{record.gradns,jdbcType=DECIMAL},
+      </if>
+      <if test="record.signs != null" >
+        sigNS = #{record.signs,jdbcType=DECIMAL},
+      </if>
+      <if test="record.gradew != null" >
+        gradEW = #{record.gradew,jdbcType=DECIMAL},
+      </if>
+      <if test="record.sigew != null" >
+        sigEW = #{record.sigew,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update pwv
+    set id = #{record.id,jdbcType=BIGINT},
+      date = #{record.date,jdbcType=TIMESTAMP},
+      totalzen = #{record.totalzen,jdbcType=DECIMAL},
+      wetzen = #{record.wetzen,jdbcType=DECIMAL},
+      sigzen = #{record.sigzen,jdbcType=DECIMAL},
+      PW = #{record.pw,jdbcType=DECIMAL},
+      sigpw = #{record.sigpw,jdbcType=DECIMAL},
+      press = #{record.press,jdbcType=DECIMAL},
+      temp = #{record.temp,jdbcType=DECIMAL},
+      ZHD = #{record.zhd,jdbcType=DECIMAL},
+      gradNS = #{record.gradns,jdbcType=DECIMAL},
+      sigNS = #{record.signs,jdbcType=DECIMAL},
+      gradEW = #{record.gradew,jdbcType=DECIMAL},
+      sigEW = #{record.sigew,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="tj.pwv.pojo.Pwv" >
+    update pwv
+    <set >
+      <if test="date != null" >
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="totalzen != null" >
+        totalzen = #{totalzen,jdbcType=DECIMAL},
+      </if>
+      <if test="wetzen != null" >
+        wetzen = #{wetzen,jdbcType=DECIMAL},
+      </if>
+      <if test="sigzen != null" >
+        sigzen = #{sigzen,jdbcType=DECIMAL},
+      </if>
+      <if test="pw != null" >
+        PW = #{pw,jdbcType=DECIMAL},
+      </if>
+      <if test="sigpw != null" >
+        sigpw = #{sigpw,jdbcType=DECIMAL},
+      </if>
+      <if test="press != null" >
+        press = #{press,jdbcType=DECIMAL},
+      </if>
+      <if test="temp != null" >
+        temp = #{temp,jdbcType=DECIMAL},
+      </if>
+      <if test="zhd != null" >
+        ZHD = #{zhd,jdbcType=DECIMAL},
+      </if>
+      <if test="gradns != null" >
+        gradNS = #{gradns,jdbcType=DECIMAL},
+      </if>
+      <if test="signs != null" >
+        sigNS = #{signs,jdbcType=DECIMAL},
+      </if>
+      <if test="gradew != null" >
+        gradEW = #{gradew,jdbcType=DECIMAL},
+      </if>
+      <if test="sigew != null" >
+        sigEW = #{sigew,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="tj.pwv.pojo.Pwv" >
+    update pwv
+    set date = #{date,jdbcType=TIMESTAMP},
+      totalzen = #{totalzen,jdbcType=DECIMAL},
+      wetzen = #{wetzen,jdbcType=DECIMAL},
+      sigzen = #{sigzen,jdbcType=DECIMAL},
+      PW = #{pw,jdbcType=DECIMAL},
+      sigpw = #{sigpw,jdbcType=DECIMAL},
+      press = #{press,jdbcType=DECIMAL},
+      temp = #{temp,jdbcType=DECIMAL},
+      ZHD = #{zhd,jdbcType=DECIMAL},
+      gradNS = #{gradns,jdbcType=DECIMAL},
+      sigNS = #{signs,jdbcType=DECIMAL},
+      gradEW = #{gradew,jdbcType=DECIMAL},
+      sigEW = #{sigew,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

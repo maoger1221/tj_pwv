@@ -1,0 +1,337 @@
+2017-05-28 14:07:29,220 [http-bio-8080-exec-10] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:29,225 [http-bio-8080-exec-4] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/js/wizard/jquery.cookie-1.3.1.js] is: -1
+2017-05-28 14:07:29,242 [http-bio-8080-exec-10] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:29,243 [http-bio-8080-exec-4] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:29,244 [http-bio-8080-exec-4] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:29,453 [http-bio-8080-exec-6] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:29,453 [http-bio-8080-exec-6] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:29,471 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:29,471 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:29,472 [http-bio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:29,472 [http-bio-8080-exec-1] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:34,001 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:07:34,001 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:07:34,001 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:07:34,001 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:07:34,001 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:07:34,002 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:07:34,002 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:07:34,002 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:34,002 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:45,934 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/panel-tabs.html]
+2017-05-28 14:07:45,935 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /panel-tabs.html
+2017-05-28 14:07:45,935 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/panel-tabs.html]
+2017-05-28 14:07:45,935 [http-bio-8080-exec-3] [org.springframework.web.servlet.PageNotFound]-[WARN] No mapping found for HTTP request with URI [/panel-tabs.html] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:07:45,935 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:49,145 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:07:49,145 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:07:49,145 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:07:49,146 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:07:49,146 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:07:49,146 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:07:49,146 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:07:49,147 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:49,147 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:53,777 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/dbdata_mwr2d]
+2017-05-28 14:07:53,777 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /dbdata_mwr2d
+2017-05-28 14:07:53,777 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showDbDatamwr2d()]
+2017-05-28 14:07:53,778 [http-bio-8080-exec-3] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:07:53,779 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/dbdata_mwr2d] is: -1
+2017-05-28 14:07:53,779 [http-bio-8080-exec-3] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Invoking afterPropertiesSet() on bean with name 'dbdata_mwr2d'
+2017-05-28 14:07:53,779 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'dbdata_mwr2d'; URL [/WEB-INF/jsp/dbdata_mwr2d.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:07:53,779 [http-bio-8080-exec-3] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/dbdata_mwr2d.jsp] in InternalResourceView 'dbdata_mwr2d'
+2017-05-28 14:07:53,915 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:53,948 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/js/getdata.js]
+2017-05-28 14:07:53,948 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /js/getdata.js
+2017-05-28 14:07:53,948 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/js/getdata.js]
+2017-05-28 14:07:53,948 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/js/getdata.js] are [/js/**]
+2017-05-28 14:07:53,949 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/js/getdata.js] are {}
+2017-05-28 14:07:53,949 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/js/getdata.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/js/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@2b4cc6b1]]] and 1 interceptor
+2017-05-28 14:07:53,949 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/js/getdata.js] is: -1
+2017-05-28 14:07:53,951 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:53,952 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/js/jquerySession.js]
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /js/jquerySession.js
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/js/jquerySession.js]
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/js/jquerySession.js] are [/js/**]
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/js/jquerySession.js] are {}
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/js/jquerySession.js] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/js/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@2b4cc6b1]]] and 1 interceptor
+2017-05-28 14:07:53,953 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/js/jquerySession.js] is: -1
+2017-05-28 14:07:53,957 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:53,957 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:07:54,156 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:07:54,156 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:07:54,157 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:02,669 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/user/quit]
+2017-05-28 14:08:02,669 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /user/quit
+2017-05-28 14:08:02,669 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.UserController.showQuit(javax.servlet.http.HttpSession)]
+2017-05-28 14:08:02,669 [http-bio-8080-exec-3] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'userController'
+2017-05-28 14:08:02,670 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/user/quit] is: -1
+2017-05-28 14:08:02,671 [http-bio-8080-exec-3] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Invoking afterPropertiesSet() on bean with name 'redirect:/login'
+2017-05-28 14:08:02,671 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/login'; URL [/login]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:02,671 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:02,675 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/login]
+2017-05-28 14:08:02,675 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /login
+2017-05-28 14:08:02,676 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showLogin()]
+2017-05-28 14:08:02,676 [http-bio-8080-exec-3] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:02,676 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/login] is: -1
+2017-05-28 14:08:02,677 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'login'; URL [/WEB-INF/jsp/login.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:02,677 [http-bio-8080-exec-3] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/login.jsp] in InternalResourceView 'login'
+2017-05-28 14:08:02,679 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:02,752 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:02,752 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:02,752 [http-bio-8080-exec-3] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:02,753 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:02,753 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:02,753 [http-bio-8080-exec-3] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:02,753 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:02,753 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:02,753 [http-bio-8080-exec-3] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:17,863 [http-bio-8080-exec-8] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/]
+2017-05-28 14:08:17,863 [http-bio-8080-exec-8] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /
+2017-05-28 14:08:17,876 [http-bio-8080-exec-8] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showIndex()]
+2017-05-28 14:08:17,876 [http-bio-8080-exec-8] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:17,876 [http-bio-8080-exec-8] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/] is: -1
+2017-05-28 14:08:17,876 [http-bio-8080-exec-8] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:17,882 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/login]
+2017-05-28 14:08:17,882 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /login
+2017-05-28 14:08:17,882 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showLogin()]
+2017-05-28 14:08:17,882 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:17,883 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/login] is: -1
+2017-05-28 14:08:17,883 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'login'; URL [/WEB-INF/jsp/login.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:17,883 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/login.jsp] in InternalResourceView 'login'
+2017-05-28 14:08:17,884 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:19,747 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing POST request for [/user/login]
+2017-05-28 14:08:19,747 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /user/login
+2017-05-28 14:08:19,748 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.UserController.showLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)]
+2017-05-28 14:08:19,748 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'userController'
+2017-05-28 14:08:19,749 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Creating a new SqlSession
+2017-05-28 14:08:19,749 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c061406] was not registered for synchronization because synchronization is not active
+2017-05-28 14:08:19,751 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Fetching JDBC Connection from DataSource
+2017-05-28 14:08:19,751 [http-bio-8080-exec-14] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.jdbc.JDBC4Connection@68054762] will not be managed by Spring
+2017-05-28 14:08:19,751 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==>  Preparing: select id, username, password, phone, email, workplace from user WHERE ( username = ? ) 
+2017-05-28 14:08:19,752 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==> Parameters: maomao(String)
+2017-05-28 14:08:19,754 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] <==      Total: 1
+2017-05-28 14:08:19,754 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@6c061406]
+2017-05-28 14:08:19,754 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Returning JDBC Connection to DataSource
+2017-05-28 14:08:19,754 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/'; URL [/]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:19,755 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:19,758 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/;jsessionid=C3B3B2BA7DF5B15C7FA4B66BEA4DD0AD]
+2017-05-28 14:08:19,758 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /
+2017-05-28 14:08:19,758 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showIndex()]
+2017-05-28 14:08:19,758 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:19,758 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/;jsessionid=C3B3B2BA7DF5B15C7FA4B66BEA4DD0AD] is: -1
+2017-05-28 14:08:19,759 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'index'; URL [/WEB-INF/jsp/index.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:19,759 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/index.jsp] in InternalResourceView 'index'
+2017-05-28 14:08:19,760 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:23,673 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:42,627 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/panel-tabs.html]
+2017-05-28 14:08:42,628 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /panel-tabs.html
+2017-05-28 14:08:42,628 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/panel-tabs.html]
+2017-05-28 14:08:42,628 [http-bio-8080-exec-14] [org.springframework.web.servlet.PageNotFound]-[WARN] No mapping found for HTTP request with URI [/panel-tabs.html] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:42,628 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:44,710 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:44,711 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:44,711 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:44,711 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:44,712 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:44,712 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:44,712 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:44,712 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:44,712 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:47,534 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/dbdata_mwr2d]
+2017-05-28 14:08:47,534 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /dbdata_mwr2d
+2017-05-28 14:08:47,535 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showDbDatamwr2d()]
+2017-05-28 14:08:47,535 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:47,535 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/dbdata_mwr2d] is: -1
+2017-05-28 14:08:47,535 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:47,539 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/login]
+2017-05-28 14:08:47,539 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /login
+2017-05-28 14:08:47,539 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showLogin()]
+2017-05-28 14:08:47,539 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:47,539 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/login] is: -1
+2017-05-28 14:08:47,540 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'login'; URL [/WEB-INF/jsp/login.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:47,540 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/login.jsp] in InternalResourceView 'login'
+2017-05-28 14:08:47,542 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:47,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:47,611 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:47,611 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:52,044 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing POST request for [/user/login]
+2017-05-28 14:08:52,044 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /user/login
+2017-05-28 14:08:52,044 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.UserController.showLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)]
+2017-05-28 14:08:52,045 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'userController'
+2017-05-28 14:08:52,045 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Creating a new SqlSession
+2017-05-28 14:08:52,046 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23fcedcd] was not registered for synchronization because synchronization is not active
+2017-05-28 14:08:52,046 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Fetching JDBC Connection from DataSource
+2017-05-28 14:08:52,046 [http-bio-8080-exec-14] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.jdbc.JDBC4Connection@68054762] will not be managed by Spring
+2017-05-28 14:08:52,047 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==>  Preparing: select id, username, password, phone, email, workplace from user WHERE ( username = ? ) 
+2017-05-28 14:08:52,047 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==> Parameters: maomao(String)
+2017-05-28 14:08:52,049 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] <==      Total: 1
+2017-05-28 14:08:52,049 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@23fcedcd]
+2017-05-28 14:08:52,049 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Returning JDBC Connection to DataSource
+2017-05-28 14:08:52,050 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/'; URL [/]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:52,050 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:52,053 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/;jsessionid=3D413B821D7F3A6770F5BBC50EB66D16]
+2017-05-28 14:08:52,053 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /
+2017-05-28 14:08:52,053 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showIndex()]
+2017-05-28 14:08:52,053 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:52,053 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/;jsessionid=3D413B821D7F3A6770F5BBC50EB66D16] is: -1
+2017-05-28 14:08:52,054 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'index'; URL [/WEB-INF/jsp/index.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:52,054 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/index.jsp] in InternalResourceView 'index'
+2017-05-28 14:08:52,055 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:52,270 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:52,271 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:57,782 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/dbdata_mwr2d]
+2017-05-28 14:08:57,782 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /dbdata_mwr2d
+2017-05-28 14:08:57,782 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showDbDatamwr2d()]
+2017-05-28 14:08:57,783 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:57,783 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/dbdata_mwr2d] is: -1
+2017-05-28 14:08:57,783 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:57,788 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/login]
+2017-05-28 14:08:57,788 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /login
+2017-05-28 14:08:57,788 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showLogin()]
+2017-05-28 14:08:57,788 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:57,788 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/login] is: -1
+2017-05-28 14:08:57,789 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'login'; URL [/WEB-INF/jsp/login.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:57,789 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/login.jsp] in InternalResourceView 'login'
+2017-05-28 14:08:57,790 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:57,862 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:57,862 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:57,862 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:57,862 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:57,862 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:57,863 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:57,863 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:57,863 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:57,863 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:59,413 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing POST request for [/user/login]
+2017-05-28 14:08:59,413 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /user/login
+2017-05-28 14:08:59,413 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.UserController.showLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)]
+2017-05-28 14:08:59,413 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'userController'
+2017-05-28 14:08:59,414 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Creating a new SqlSession
+2017-05-28 14:08:59,414 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43d31282] was not registered for synchronization because synchronization is not active
+2017-05-28 14:08:59,415 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Fetching JDBC Connection from DataSource
+2017-05-28 14:08:59,415 [http-bio-8080-exec-14] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.jdbc.JDBC4Connection@68054762] will not be managed by Spring
+2017-05-28 14:08:59,415 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==>  Preparing: select id, username, password, phone, email, workplace from user WHERE ( username = ? ) 
+2017-05-28 14:08:59,416 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==> Parameters: maomao(String)
+2017-05-28 14:08:59,417 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] <==      Total: 1
+2017-05-28 14:08:59,418 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@43d31282]
+2017-05-28 14:08:59,418 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Returning JDBC Connection to DataSource
+2017-05-28 14:08:59,418 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/'; URL [/]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:59,419 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:59,422 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/;jsessionid=972EB64BA971DC8E23DE7FFBC253C50D]
+2017-05-28 14:08:59,423 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /
+2017-05-28 14:08:59,423 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showIndex()]
+2017-05-28 14:08:59,423 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:08:59,423 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/;jsessionid=972EB64BA971DC8E23DE7FFBC253C50D] is: -1
+2017-05-28 14:08:59,424 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'index'; URL [/WEB-INF/jsp/index.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:08:59,424 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/index.jsp] in InternalResourceView 'index'
+2017-05-28 14:08:59,425 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:08:59,609 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:08:59,609 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:08:59,610 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:27,691 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/dbdata_mwr2d;jsessionid=972EB64BA971DC8E23DE7FFBC253C50D]
+2017-05-28 14:09:27,691 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /dbdata_mwr2d
+2017-05-28 14:09:27,691 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showDbDatamwr2d()]
+2017-05-28 14:09:27,691 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:09:27,691 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/dbdata_mwr2d;jsessionid=972EB64BA971DC8E23DE7FFBC253C50D] is: -1
+2017-05-28 14:09:27,692 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'dbdata_mwr2d'; URL [/WEB-INF/jsp/dbdata_mwr2d.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:09:27,692 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/dbdata_mwr2d.jsp] in InternalResourceView 'dbdata_mwr2d'
+2017-05-28 14:09:27,695 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:27,838 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:09:27,838 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:09:27,838 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:09:27,839 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:09:27,839 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:09:27,839 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:09:27,839 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:09:27,839 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:09:27,839 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:32,570 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/]
+2017-05-28 14:09:32,570 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /
+2017-05-28 14:09:32,570 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showIndex()]
+2017-05-28 14:09:32,570 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:09:32,570 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/] is: -1
+2017-05-28 14:09:32,571 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:32,574 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/login]
+2017-05-28 14:09:32,574 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /login
+2017-05-28 14:09:32,574 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showLogin()]
+2017-05-28 14:09:32,574 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:09:32,574 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/login] is: -1
+2017-05-28 14:09:32,575 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'login'; URL [/WEB-INF/jsp/login.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:09:32,575 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/login.jsp] in InternalResourceView 'login'
+2017-05-28 14:09:32,576 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:32,652 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:09:32,652 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:09:32,652 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:09:32,652 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:09:32,652 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:09:32,653 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:09:32,653 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:09:32,653 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:09:32,653 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:33,633 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing POST request for [/user/login]
+2017-05-28 14:09:33,633 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /user/login
+2017-05-28 14:09:33,633 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.UserController.showLogin(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)]
+2017-05-28 14:09:33,633 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'userController'
+2017-05-28 14:09:33,634 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Creating a new SqlSession
+2017-05-28 14:09:33,634 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61228f23] was not registered for synchronization because synchronization is not active
+2017-05-28 14:09:33,635 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Fetching JDBC Connection from DataSource
+2017-05-28 14:09:33,635 [http-bio-8080-exec-14] [org.mybatis.spring.transaction.SpringManagedTransaction]-[DEBUG] JDBC Connection [com.mysql.jdbc.JDBC4Connection@68054762] will not be managed by Spring
+2017-05-28 14:09:33,635 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==>  Preparing: select id, username, password, phone, email, workplace from user WHERE ( username = ? ) 
+2017-05-28 14:09:33,636 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] ==> Parameters: maomao(String)
+2017-05-28 14:09:33,637 [http-bio-8080-exec-14] [tj.pwv.mapper.UserMapper.selectByExample]-[DEBUG] <==      Total: 1
+2017-05-28 14:09:33,637 [http-bio-8080-exec-14] [org.mybatis.spring.SqlSessionUtils]-[DEBUG] Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@61228f23]
+2017-05-28 14:09:33,637 [http-bio-8080-exec-14] [org.springframework.jdbc.datasource.DataSourceUtils]-[DEBUG] Returning JDBC Connection to DataSource
+2017-05-28 14:09:33,638 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.RedirectView: name 'redirect:/'; URL [/]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:09:33,638 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:33,641 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/;jsessionid=032BDFFD226FB172AC601035D55CF621]
+2017-05-28 14:09:33,642 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /
+2017-05-28 14:09:33,642 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Returning handler method [public java.lang.String tj.pwv.controller.PageController.showIndex()]
+2017-05-28 14:09:33,642 [http-bio-8080-exec-14] [org.springframework.beans.factory.support.DefaultListableBeanFactory]-[DEBUG] Returning cached instance of singleton bean 'pageController'
+2017-05-28 14:09:33,642 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/;jsessionid=032BDFFD226FB172AC601035D55CF621] is: -1
+2017-05-28 14:09:33,642 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Rendering view [org.springframework.web.servlet.view.JstlView: name 'index'; URL [/WEB-INF/jsp/index.jsp]] in DispatcherServlet with name 'tj-pwv'
+2017-05-28 14:09:33,642 [http-bio-8080-exec-14] [org.springframework.web.servlet.view.JstlView]-[DEBUG] Forwarding to resource [/WEB-INF/jsp/index.jsp] in InternalResourceView 'index'
+2017-05-28 14:09:33,644 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request
+2017-05-28 14:09:33,805 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] DispatcherServlet with name 'tj-pwv' processing GET request for [/css/bootstrap.css.map]
+2017-05-28 14:09:33,805 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Looking up handler method for path /css/bootstrap.css.map
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping]-[DEBUG] Did not find handler method for [/css/bootstrap.css.map]
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Matching patterns for request [/css/bootstrap.css.map] are [/css/**]
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] URI Template variables for request [/css/bootstrap.css.map] are {}
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.handler.SimpleUrlHandlerMapping]-[DEBUG] Mapping [/css/bootstrap.css.map] to HandlerExecutionChain with handler [ResourceHttpRequestHandler [locations=[ServletContext resource [/WEB-INF/css/]], resolvers=[org.springframework.web.servlet.resource.PathResourceResolver@97aabf3]]] and 1 interceptor
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Last-Modified value for [/css/bootstrap.css.map] is: -1
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Null ModelAndView returned to DispatcherServlet with name 'tj-pwv': assuming HandlerAdapter completed request handling
+2017-05-28 14:09:33,806 [http-bio-8080-exec-14] [org.springframework.web.servlet.DispatcherServlet]-[DEBUG] Successfully completed request

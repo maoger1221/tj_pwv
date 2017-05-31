@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="tj.pwv.mapper.MwrZenitMapper" >
+  <resultMap id="BaseResultMap" type="tj.pwv.pojo.MwrZenit" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="date" property="date" jdbcType="TIMESTAMP" />
+    <result column="rainflag" property="rainflag" jdbcType="INTEGER" />
+    <result column="iwv" property="iwv" jdbcType="DECIMAL" />
+    <result column="elev" property="elev" jdbcType="DECIMAL" />
+    <result column="azi" property="azi" jdbcType="DECIMAL" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, date, rainflag, iwv, elev, azi
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="tj.pwv.pojo.MwrZenitExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from mwr_zenit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from mwr_zenit
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from mwr_zenit
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <delete id="deleteByExample" parameterType="tj.pwv.pojo.MwrZenitExample" >
+    delete from mwr_zenit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="tj.pwv.pojo.MwrZenit" >
+    insert into mwr_zenit (id, date, rainflag, 
+      iwv, elev, azi)
+    values (#{id,jdbcType=BIGINT}, #{date,jdbcType=TIMESTAMP}, #{rainflag,jdbcType=INTEGER}, 
+      #{iwv,jdbcType=DECIMAL}, #{elev,jdbcType=DECIMAL}, #{azi,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="tj.pwv.pojo.MwrZenit" >
+    insert into mwr_zenit
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="date != null" >
+        date,
+      </if>
+      <if test="rainflag != null" >
+        rainflag,
+      </if>
+      <if test="iwv != null" >
+        iwv,
+      </if>
+      <if test="elev != null" >
+        elev,
+      </if>
+      <if test="azi != null" >
+        azi,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="date != null" >
+        #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rainflag != null" >
+        #{rainflag,jdbcType=INTEGER},
+      </if>
+      <if test="iwv != null" >
+        #{iwv,jdbcType=DECIMAL},
+      </if>
+      <if test="elev != null" >
+        #{elev,jdbcType=DECIMAL},
+      </if>
+      <if test="azi != null" >
+        #{azi,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="tj.pwv.pojo.MwrZenitExample" resultType="java.lang.Integer" >
+    select count(*) from mwr_zenit
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update mwr_zenit
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=BIGINT},
+      </if>
+      <if test="record.date != null" >
+        date = #{record.date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.rainflag != null" >
+        rainflag = #{record.rainflag,jdbcType=INTEGER},
+      </if>
+      <if test="record.iwv != null" >
+        iwv = #{record.iwv,jdbcType=DECIMAL},
+      </if>
+      <if test="record.elev != null" >
+        elev = #{record.elev,jdbcType=DECIMAL},
+      </if>
+      <if test="record.azi != null" >
+        azi = #{record.azi,jdbcType=DECIMAL},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update mwr_zenit
+    set id = #{record.id,jdbcType=BIGINT},
+      date = #{record.date,jdbcType=TIMESTAMP},
+      rainflag = #{record.rainflag,jdbcType=INTEGER},
+      iwv = #{record.iwv,jdbcType=DECIMAL},
+      elev = #{record.elev,jdbcType=DECIMAL},
+      azi = #{record.azi,jdbcType=DECIMAL}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="tj.pwv.pojo.MwrZenit" >
+    update mwr_zenit
+    <set >
+      <if test="date != null" >
+        date = #{date,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rainflag != null" >
+        rainflag = #{rainflag,jdbcType=INTEGER},
+      </if>
+      <if test="iwv != null" >
+        iwv = #{iwv,jdbcType=DECIMAL},
+      </if>
+      <if test="elev != null" >
+        elev = #{elev,jdbcType=DECIMAL},
+      </if>
+      <if test="azi != null" >
+        azi = #{azi,jdbcType=DECIMAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="tj.pwv.pojo.MwrZenit" >
+    update mwr_zenit
+    set date = #{date,jdbcType=TIMESTAMP},
+      rainflag = #{rainflag,jdbcType=INTEGER},
+      iwv = #{iwv,jdbcType=DECIMAL},
+      elev = #{elev,jdbcType=DECIMAL},
+      azi = #{azi,jdbcType=DECIMAL}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
