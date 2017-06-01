@@ -61,15 +61,17 @@ public class DataController {
     @ResponseBody
     public Object getAnalysis(String date,String drawingbox,String selectbox){
         ViewObject vo = new ViewObject();
-        if (drawingbox.contains("before")) {
-            vo.set("pwv_before",dataService.getDbDrawingPWV(date));
-        }
+
         if (drawingbox.contains("after")) {
-            if(dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after") != "" && dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after") != null)
-                vo.set("pwv_after",dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after"));
-			if(dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict") != "" && dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict") != null)
-				vo.set("predict",dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict"));
+        	vo = dataService.getDbDrawingPWV(date,selectbox);
+//            if(dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after") != "" && dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after") != null)
+//                vo.set("pwv_after",dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after"));
+//			if(dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict") != "" && dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict") != null)
+//				vo.set("predict",dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict"));
         }
+		if (drawingbox.contains("before")) {
+			vo.set("pwv_before",dataService.getDbDrawingPWV(date));
+		}
         return vo;
     }
 }

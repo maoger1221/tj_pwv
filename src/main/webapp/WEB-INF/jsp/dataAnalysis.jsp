@@ -68,10 +68,31 @@
 						</div>
 					</div>
 				</div>
+
 				<div align="center">
 					<canvas id="myCanvas" style="border: 2px solid #6699cc" hidden="hidden"></canvas>
 					<!-- <canvas id="myCanvas" width="1080" height="600" style="border: 2px solid #6699cc"></canvas> -->
 					<img id="imgId" src="" class="img-responsive "/>
+				</div>
+				<%--表格--%>
+				<div id="myTable" class="panel panel-default ">
+					<div class="panel-heading">数据分析结果</div>
+					<div class="panel-body">
+						<div class="table-responsive">
+							<table id="ttable" class="table table-hover">
+								<thead>
+								<tr>
+									<th>属性名</th>
+									<th>属性</th>
+								</tr>
+								</thead>
+								<tbody id="tbody">
+								<!-- 通过ajax获得数据 -->
+
+								</tbody>
+							</table>
+						</div>
+					</div>
 				</div>
 			</div>
 			<!-- /. PAGE INNER  -->

@@ -342,7 +342,7 @@ public class DataServiceImpl implements DataService {
 			vo.set("ffk",ssa.getFfk());//频率在ffk和ffk1之间
 			vo.set("ffk1",ssa.getFfk1());
 //			vo.set("pwv_after",matrixToList(ssa.getZ()));
-			vo.set("pwv_after","");
+//			vo.set("pwv_after","");
 			return vo;
 		}else if (selectbox.equals("4")){
 			List<Double> datalist=new ArrayList<Double>();
