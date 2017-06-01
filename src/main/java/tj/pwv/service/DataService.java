@@ -4,10 +4,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import tj.pwv.pojo.Mwr2d;
-import tj.pwv.pojo.MwrZenit;
-import tj.pwv.pojo.MwrZenit30min;
-import tj.pwv.pojo.Pwv;
+import tj.pwv.pojo.*;
 
 public interface DataService {
 	
@@ -16,4 +13,5 @@ public interface DataService {
 	List<Pwv> getPWV();
 	List<MwrZenit30min> getDbDrawingMwrZ(String date);
 	List<Pwv> getDbDrawingPWV(String date);
+	ViewObject getDbDrawingPWV(String date, String selectbox);
 }

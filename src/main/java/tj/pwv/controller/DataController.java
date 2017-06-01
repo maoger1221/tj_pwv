@@ -10,8 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import tj.pwv.pojo.DrawingCheckBox;
 import tj.pwv.pojo.Mwr2d;
 import tj.pwv.pojo.MwrZenit;
+import tj.pwv.pojo.ViewObject;
 import tj.pwv.service.DataService;
 
 @Controller
@@ -53,5 +55,21 @@ public class DataController {
 		httpSession.setAttribute("type", "");
 		return "success";
 	}
-	
+
+
+    @RequestMapping(value="/getAnalysis", method=RequestMethod.POST)
+    @ResponseBody
+    public Object getAnalysis(String date,String drawingbox,String selectbox){
+        ViewObject vo = new ViewObject();
+        if (drawingbox.contains("before")) {
+            vo.set("pwv_before",dataService.getDbDrawingPWV(date));
+        }
+        if (drawingbox.contains("after")) {
+            if(dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after") != "" && dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after") != null)
+                vo.set("pwv_after",dataService.getDbDrawingPWV(date,selectbox).getObjs().get("pwv_after"));
+			if(dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict") != "" && dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict") != null)
+				vo.set("predict",dataService.getDbDrawingPWV(date,selectbox).getObjs().get("predict"));
+        }
+        return vo;
+    }
 }

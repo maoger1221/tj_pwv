@@ -6,7 +6,7 @@ import Jama.Matrix;
 
 public class SSA {
 	private Matrix y;//各个分量rc（或滤波后信后）
-	private Matrix z;//总趋势信号
+	private Matrix z;//总趋势信号（或总周期信号）
 	private Matrix r;//残差
 	private int p_filter;//滤波的裁取长度
 	private List<Integer> trends;//趋势信号是rc中的哪几项

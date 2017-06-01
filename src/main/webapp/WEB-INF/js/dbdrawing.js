@@ -21,10 +21,10 @@ var width = ctx.canvas.width;
 var height = ctx.canvas.height;
 
 
-
+//在绘图页面的请求
 $("#drawingbutton").click(
 		function() {
-			
+
 			//清空session防止数据互扰getPWV getDbDrawing
 			$.get("/clearSession",function(data) {});
 			$.ajax({
@@ -37,39 +37,84 @@ $("#drawingbutton").click(
 					// 绘制格网
 					drawGrid(DRAW_WIDTH, DRAW_HEIGHT, GRID_WIDTH, GRID_HEIGHT);
 					drawTitle(width, height);
-					//如果选中多个
-					if(typeof(data.iwvdata) != "undefined" && typeof(data.pwvdata) != "undefined"){
 
-						$.each(data.iwvdata, function(i, data) {
-							draw(i * SCALE_X + MOVE_X, height - data.iwv * SCALE_Y - MOVE_Y, i,"red");
+                    ctx.beginPath();
+					ctx.lineWidth = "1";
+                    // 坐标原点平移
+					// x坐标缩放2倍，共10天480个点——960，加上最左右的空隙共1080
+					if(typeof(data.objs.iwvdata) != "undefined") {
+						$.each(data.objs.iwvdata, function (i, data) {
+							draw(i * SCALE_X + MOVE_X, height - data.iwv * SCALE_Y - MOVE_Y, i, "red");
 						});
-
-						$.each(data.pwvdata, function(i, data) {
-							draw(i * SCALE_X + MOVE_X, height - data.pw * SCALE_Y - MOVE_Y, i,"blue");
-						});
-
-					}else{
-						//只选中一种
-						ctx.beginPath();
-						ctx.lineWidth = "1";
-						$.each(data, function(i, data) {
-							// 坐标原点平移
-							// x坐标缩放2倍，共10天480个点——960，加上最左右的空隙共1080
-							if(typeof(data.iwv) != "undefined"){
-								draw(i * SCALE_X + MOVE_X, height - data.iwv * SCALE_Y - MOVE_Y, i,"red");
-							}else if(typeof(data.pw) != "undefined"){
-								draw(i * SCALE_X + MOVE_X, height - data.pw * SCALE_Y - MOVE_Y, i,"blue");
-							}
-						});
-						ctx.closePath();
-						ctx.stroke();
-						
 					}
+					if(typeof(data.objs.pwvdata) != "undefined") {
+						$.each(data.objs.pwvdata, function (i, data) {
+							draw(i * SCALE_X + MOVE_X, height - data.pw * SCALE_Y - MOVE_Y, i, "blue");
+						});
+					}
+                    ctx.closePath();
+					ctx.stroke();
 					transImg();
 				}
 			});
 			
 		});
+
+//在数据分析页面的请求
+$("#analysisbutton").click(
+    function() {
+        $("#progressbar1").text("数据正在处理，请稍后。。。")
+        $("#progressbar2").attr("style","width: 50%")
+        //清空session防止数据互扰getPWV getDbDrawing
+        $.get("/clearSession",function(data) {});
+        $.ajax({
+            type : "POST",
+            url : "/getAnalysis",
+            data : $('#drawingform').serialize(),
+            success : function(data) {
+                // 清空画布
+                clearArea();
+                // 绘制格网
+                drawGrid(DRAW_WIDTH, DRAW_HEIGHT, GRID_WIDTH, GRID_HEIGHT);
+                drawTitle(width, height);
+                ctx.beginPath();
+                ctx.lineWidth = "1";
+                // 坐标原点平移
+                // x坐标缩放2倍，共10天480个点——960，加上最左右的空隙共1080
+                if(typeof(data.objs.pwv_before) != "undefined") {
+                    $.each(data.objs.pwv_before, function (i, data) {
+                        draw(i * SCALE_X + MOVE_X, height - data.pw * SCALE_Y - MOVE_Y, i, "red");
+                    });
+                }
+                if(typeof(data.objs.pwv_after) != "undefined") {
+                    $.each(data.objs.pwv_after, function (i, data) {
+                        draw(i * SCALE_X + MOVE_X, height - data * SCALE_Y - MOVE_Y, i, "blue");
+                    });
+                }
+
+                if(typeof(data.objs.predict) != "undefined") {
+                    $.each(data.objs.predict, function (i, data) {
+                    	//预测5个，去掉前5个，后5个变红（原来有480个，预测5个变成485个）
+                    	if(i > 4 && i < 485 - 5){
+                        	draw((i-5) * SCALE_X + MOVE_X, height - data * SCALE_Y - MOVE_Y, (i-5), "blue");
+						}else if(i >= 485 - 5){
+                            draw((i-5) * SCALE_X + MOVE_X, height - data * SCALE_Y - MOVE_Y, (i-5), "red");
+						}
+                    });
+                }
+                ctx.closePath();
+                ctx.stroke();
+                transImg();
+
+            },
+            complete: function () {
+                $("#progressbar1").text("数据处理完成。。。")
+                $("#progressbar2").attr("style","width: 100%")
+            }
+        });
+
+    });
+
 
 function draw(x, y, i,color) {
 	if(i != 0){

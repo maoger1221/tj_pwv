@@ -1,13 +1,18 @@
 package tj.pwv.service;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import javax.servlet.http.HttpSession;
+import javax.swing.text.View;
 
+import Jama.Matrix;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -19,15 +24,13 @@ import tj.pwv.mapper.Mwr2dMapper;
 import tj.pwv.mapper.MwrZenit30minMapper;
 import tj.pwv.mapper.MwrZenitMapper;
 import tj.pwv.mapper.PwvMapper;
-import tj.pwv.pojo.Mwr2d;
-import tj.pwv.pojo.Mwr2dExample;
+import tj.pwv.pojo.*;
 import tj.pwv.pojo.Mwr2dExample.Criteria;
-import tj.pwv.pojo.MwrZenit;
-import tj.pwv.pojo.MwrZenit30min;
-import tj.pwv.pojo.MwrZenit30minExample;
-import tj.pwv.pojo.MwrZenitExample;
-import tj.pwv.pojo.Pwv;
-import tj.pwv.pojo.PwvExample;
+import tj.pwv.utils.arima.ARIMA;
+import tj.pwv.utils.dataformat.PWV;
+import tj.pwv.utils.ssa.SSA;
+import tj.pwv.utils.ssa.SSAUtils;
+
 @Service
 public class DataServiceImpl implements DataService {
 	@Autowired
@@ -280,5 +283,116 @@ public class DataServiceImpl implements DataService {
 		List<Pwv> list = pwvMapper.selectByExample(example);
 		return list;
 	}
-	
+
+	public ViewObject getDbDrawingPWV(String date, String selectbox) {
+		PwvExample example = new PwvExample();
+		tj.pwv.pojo.PwvExample.Criteria criteria = example.createCriteria();
+		//查询日期范围
+		if(date != "" && date != null){
+			String[] sdate = date.split("~");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			try {
+				Date date1 = sdf.parse(sdate[0]);
+				Date date2 = sdf.parse(sdate[1]);
+				criteria.andDateBetween(date1, date2);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}else{
+			Long count = (long) pwvMapper.countByExample(example);
+			// 取最后10天的数据，即480个
+			criteria.andIdBetween(count - 480 + 1, count);
+		}
+		List<Pwv> list = pwvMapper.selectByExample(example);
+		ViewObject vo = null;
+		if (selectbox != null && selectbox != ""){
+			vo = doAnalysis(selectbox,list);
+		}
+		return vo;
+	}
+
+
+	private ViewObject doAnalysis(String selectbox, List<Pwv> list) {
+		double[] pwvForSsa = new double[list.size()];
+		for (int i = 0; i < list.size(); i++) {
+			pwvForSsa[i] = list.get(i).getPw().doubleValue();
+		}
+		ViewObject vo = new ViewObject();
+		if (selectbox.equals("1")){
+			SSA ssa = SSAUtils.ssaFilter(pwvForSsa,list.size()/3);
+			vo.set("p_filter",ssa.getP_filter());//滤波裁取长度
+			vo.set("pwv_after",matrixToList(ssa.getY()));//滤波后信号
+			vo.set("r",matrixToList(ssa.getR()));//残差
+			vo.set("sigma",matrixToList(ssa.getS_Dialog()));//奇异值
+			return vo;
+		}else if (selectbox.equals("2")){
+			SSA ssa = SSAUtils.ssaTrends(pwvForSsa,list.size()/3);
+			vo.set("trends",ssa.getTrends());//趋势项序号
+			vo.set("per",ssa.getPer());//趋势项贡献率
+			vo.set("pwv_after",matrixToList(ssa.getZ()));//总的趋势项
+			vo.set("y",matrixToList2(ssa.getY()));//各个rc
+			vo.set("sigma",matrixToList(ssa.getS_Dialog()));//奇异值
+			return vo;
+		}else if (selectbox.equals("3")){
+			SSA ssa = SSAUtils.ssaPeriod(pwvForSsa,list.size()/3);
+			vo.set("per",ssa.getPer());//周期项贡献率
+			vo.set("p",ssa.getP());//周期项序号(每个周期项由两项构成，p和p+1)
+			vo.set("y",matrixToList2(ssa.getY()));//各个rc
+			vo.set("sigma",matrixToList(ssa.getS_Dialog()));//奇异值
+			vo.set("ffk",ssa.getFfk());//频率在ffk和ffk1之间
+			vo.set("ffk1",ssa.getFfk1());
+//			vo.set("pwv_after",matrixToList(ssa.getZ()));
+			vo.set("pwv_after","");
+			return vo;
+		}else if (selectbox.equals("4")){
+			List<Double> datalist=new ArrayList<Double>();
+			for(Pwv pwv : list){
+				datalist.add(pwv.getPw().doubleValue());
+			}
+			//递推进行多步预测(5步)
+			int n = 5;
+			for (int j = 0; j < n; j++){
+
+				double[] dataArray=new double[datalist.size()];
+				for(int i=0;i<datalist.size();i++)
+					dataArray[i]=datalist.get(i);
+
+				ARIMA arima=new ARIMA(dataArray);
+
+				int []model=arima.getARIMAmodel();
+				System.out.println("Best model is [p,q]="+"["+model[0]+" "+model[1]+"]");
+
+				double pvalue = arima.aftDeal(arima.predictValue(model[0],model[1]));
+				System.out.println("Predict value="+ pvalue);
+				datalist.add(pvalue);
+			}
+//			vo.set("pwv_after","");
+			vo.set("predict",datalist);
+			return vo;
+		}
+
+		return null;
+	}
+
+	private List<Double> matrixToList(Matrix x){
+		List<Double> list = new ArrayList<>();
+		double[][] array = x.getArray();
+		for (int i = 0; i < x.getRowDimension(); i++) {
+			list.add(array[i][0]);
+		}
+		return list;
+	}
+	private List<List<Double>> matrixToList2(Matrix x){
+		List<List<Double>> list = new ArrayList<>();
+		double[][] array = x.getArray();
+		for (int i = 0; i < x.getRowDimension(); i++) {
+			List<Double> listCol = new ArrayList<>();
+			for (int j = 0; j < x.getColumnDimension(); j++) {
+				listCol.add(array[i][j]);
+			}
+			list.add(listCol);
+		}
+		return list;
+	}
+
 }
