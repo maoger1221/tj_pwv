@@ -65,7 +65,7 @@ $("#analysisbutton").click(
     function() {
         $("#progressbar1").text("数据正在处理，请稍后。。。")
         $("#progressbar2").attr("style","width: 50%")
-        // $("#myTable").hide()
+        $("#myTable").hide()
         //清空session防止数据互扰getPWV getDbDrawing
         $.get("/clearSession",function(data) {});
         $.ajax({
@@ -114,7 +114,7 @@ $("#analysisbutton").click(
             complete: function () {
                 $("#progressbar1").text("数据处理完成。。。")
                 $("#progressbar2").attr("style","width: 100%")
-                // $("#myTable").show()
+                $("#myTable").show()
             }
         });
 
@@ -123,27 +123,34 @@ $("#analysisbutton").click(
 // 向表格中添加数据
 function append(data,name) {
 
-	var obj = "<tr>" + "<td>" + name + "</td>" + "<td>" + data + "</td>" + "</tr>";
+	var obj = "<tr>" + "<td align='center'>" + name + "</td>" + "<td align='center'>" + data + "</td>" + "</tr>";
 	$("#tbody").append(obj);
+    $("#tbody").trigger("create");
+}
+function append1(data,name) {
+
+    var obj = "<tr>" + "<td align='center'>" + name + "</td>" + "<td align='center'>" +
+        "<button type='button' class='btn btn-xs btn-info'>"+ "<i class='fa fa-bolt fa-fw'></i>" +data +"</button>" + "</td>" + "</tr>";
+    $("#tbody").append(obj);
     $("#tbody").trigger("create");
 }
 
 function appendTable(data) {
     $("#tbody").children().remove();
     if(typeof(data.objs.pwv_before) != "undefined") {
-        append("点击下载","处理前信号")
+        append1("点击下载","处理前信号")
     }
     if(typeof(data.objs.pwv_after) != "undefined") {
-        append("点击下载","处理后信号")
+        append1("点击下载","处理后信号")
     }
     if(typeof(data.objs.p_filter) != "undefined") {
         append(data.objs.p_filter,"滤波截断值")
     }
     if(typeof(data.objs.r) != "undefined") {
-        append("点击下载","残差")
+        append1("点击下载","残差")
     }
     if(typeof(data.objs.sigma) != "undefined") {
-        append("点击下载","奇异值")
+        append1("点击下载","奇异值")
     }
     if(typeof(data.objs.trends) != "undefined") {
         append(data.objs.trends,"趋势项序号")
@@ -152,7 +159,7 @@ function appendTable(data) {
         append(data.objs.per,"贡献率")
     }
     if(typeof(data.objs.y) != "undefined") {
-        append("点击下载","各个重构信号rc")
+        append1("点击下载","各个重构信号rc")
     }
     if(typeof(data.objs.p) != "undefined") {
         append(data.objs.p,"周期项序号(每个周期项由两项构成，p和p+1)")
@@ -164,7 +171,7 @@ function appendTable(data) {
         append(data.objs.ffk1,"频率2")
     }
     if(typeof(data.objs.predict) != "undefined") {
-        append("点击下载","预测信号")
+        append1("点击下载","预测信号")
     }
 }
 

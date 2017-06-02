@@ -10,5 +10,4 @@
 
 	<!-- 扫描包加载Service实现类 -->
 	<context:component-scan base-package="tj.pwv.service"></context:component-scan>
-	
 </beans>

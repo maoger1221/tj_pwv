@@ -1,5 +1,6 @@
 package tj.pwv.utils.ssa;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -290,7 +291,8 @@ public class SSAUtils {
 		Matrix z = new Matrix(N,1);
 		for (int i = 0; i < trends.size(); i++) {
 			//计算趋势项的贡献率
-			per.add(lam.get(trends.get(i), 0)/slam);
+			double myper = lam.get(trends.get(i), 0)/slam;
+			per.add(Double.parseDouble(String.format("%.4f",myper)));
 			z.plusEquals(y.getMatrix(0, y.getRowDimension()-1,trends.get(i),trends.get(i)));
 		}
 		
@@ -358,8 +360,8 @@ public class SSAUtils {
 			double cri2 = (Ek.abs()*Ek.abs() + Ek1.abs()*Ek1.abs())/sigma2.getRowDimension();
 			if(cri1 < 0.75 && cri2 > (2.0/3.0)){
 				p.add(k);//周期项重构序列rc的序号
-				ffk.add(fk);//该周期的频率在fk到fk1之间，周期即为1/f
-				ffk1.add(fk1);
+				ffk.add(Double.parseDouble(String.format("%.4f",fk)));//该周期的频率在fk到fk1之间，周期即为1/f
+				ffk1.add(Double.parseDouble(String.format("%.4f",fk1)));
 			}
 			
 		}
@@ -376,7 +378,8 @@ public class SSAUtils {
 		Matrix z = new Matrix(N,1);
 		for (int i = 0; i < p.size(); i++) {
 			//计算趋势项的贡献率，有rck和rck+1共同构成
-			per.add((lam.get(p.get(i), 0)+lam.get(p.get(i)+1, 0))/slam);
+			double myper = (lam.get(p.get(i), 0)+lam.get(p.get(i)+1, 0))/slam;
+			per.add(Double.parseDouble(String.format("%.4f",myper)));
 //			z.plusEquals(y.getMatrix(0, y.getRowDimension()-1,p.get(i),p.get(i)));
 //			if(!p.contains(p.get(i)+1) && p.get(i)+1 <y.getColumnDimension()){
 //				z.plusEquals(y.getMatrix(0, y.getRowDimension()-1,p.get(i)+1,p.get(i)+1));

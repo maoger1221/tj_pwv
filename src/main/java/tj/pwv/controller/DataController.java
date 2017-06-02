@@ -1,16 +1,26 @@
 package tj.pwv.controller;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import org.apache.commons.io.FileUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import tj.pwv.pojo.DrawingCheckBox;
+
 import tj.pwv.pojo.Mwr2d;
 import tj.pwv.pojo.MwrZenit;
 import tj.pwv.pojo.ViewObject;
@@ -74,4 +84,27 @@ public class DataController {
 		}
         return vo;
     }
+
+
+
+	private static final String DATAPOSTION = "E:\\JetBrains\\IdeaProjects\\tj_pwv\\src\\main\\resources\\downlfiles\\";
+	private static final String FILESUFFIX = ".txt";
+    //下载文件
+	@RequestMapping(value = "/download/{filename}", method = RequestMethod.GET)
+	public ResponseEntity<byte[]> download(@PathVariable("filename") String filename) throws IOException {
+		String filename1 = filename + FILESUFFIX;
+		String path=DATAPOSTION + filename1;
+		File file=new File(path);
+		HttpHeaders headers = new HttpHeaders();
+		String fileName2=new String(filename1.getBytes("UTF-8"),"iso-8859-1");//为了解决中文名称乱码问题
+		headers.setContentDispositionFormData("attachment", fileName2);
+		headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+		return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),headers, HttpStatus.OK);//ie浏览器用这个方法不能下载,将HttpStatus.created改为HttpStatus.OK
+	}
+
+//	@RequestMapping(value = "",method = )
+//	public String createFile(){
+//
+//	}
+
 }

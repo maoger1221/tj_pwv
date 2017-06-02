@@ -75,15 +75,15 @@
 					<img id="imgId" src="" class="img-responsive "/>
 				</div>
 				<%--表格--%>
-				<div id="myTable" class="panel panel-default ">
-					<div class="panel-heading">数据分析结果</div>
+				<div id="myTable" class="panel panel-default " hidden="hidden">
+					<div class="panel-heading" align='center'><h4><b>数据分析结果</b></h4></div>
 					<div class="panel-body">
 						<div class="table-responsive">
 							<table id="ttable" class="table table-hover">
 								<thead>
 								<tr>
-									<th>属性名</th>
-									<th>属性</th>
+									<td align="center"><b>属性名</b></td>
+									<td align='center'><b>属性</b></td>
 								</tr>
 								</thead>
 								<tbody id="tbody">
