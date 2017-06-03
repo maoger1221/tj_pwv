@@ -19,7 +19,8 @@ var MOVE_Y = 50;
 
 var width = ctx.canvas.width;
 var height = ctx.canvas.height;
-
+//返回的vo
+var myvo;
 
 //在绘图页面的请求
 $("#drawingbutton").click(
@@ -73,8 +74,9 @@ $("#analysisbutton").click(
             url : "/getAnalysis",
             data : $('#drawingform').serialize(),
             success : function(data) {
+                myvo = data;
             	//向表格中添加数据
-                appendTable(data)
+                appendTable(data);
 
                 // 清空画布
                 clearArea();
@@ -127,30 +129,33 @@ function append(data,name) {
 	$("#tbody").append(obj);
     $("#tbody").trigger("create");
 }
-function append1(data,name) {
+function append1(data,name,id) {
 
     var obj = "<tr>" + "<td align='center'>" + name + "</td>" + "<td align='center'>" +
-        "<button type='button' class='btn btn-xs btn-info'>"+ "<i class='fa fa-bolt fa-fw'></i>" +data +"</button>" + "</td>" + "</tr>";
+        "<button id='" + id + "' type='button' class='btn btn-xs btn-info'>"+ "<i class='fa fa-bolt fa-fw'></i>" +data +"</button>" + "</td>" + "</tr>";
     $("#tbody").append(obj);
+    $("#"+id).bind("click",function() {
+        download(id);
+    });
     $("#tbody").trigger("create");
 }
 
 function appendTable(data) {
     $("#tbody").children().remove();
     if(typeof(data.objs.pwv_before) != "undefined") {
-        append1("点击下载","处理前信号")
+        append1("点击下载","处理前信号","pwv_before")
     }
     if(typeof(data.objs.pwv_after) != "undefined") {
-        append1("点击下载","处理后信号")
+        append1("点击下载","处理后信号","pwv_after")
     }
     if(typeof(data.objs.p_filter) != "undefined") {
-        append(data.objs.p_filter,"滤波截断值")
+        append(data.objs.p_filter,"滤波截断值","p_filter")
     }
     if(typeof(data.objs.r) != "undefined") {
-        append1("点击下载","残差")
+        append1("点击下载","残差","r")
     }
     if(typeof(data.objs.sigma) != "undefined") {
-        append1("点击下载","奇异值")
+        append1("点击下载","奇异值","sigma")
     }
     if(typeof(data.objs.trends) != "undefined") {
         append(data.objs.trends,"趋势项序号")
@@ -158,9 +163,9 @@ function appendTable(data) {
     if(typeof(data.objs.per) != "undefined") {
         append(data.objs.per,"贡献率")
     }
-    if(typeof(data.objs.y) != "undefined") {
-        append1("点击下载","各个重构信号rc")
-    }
+    /*if(typeof(data.objs.y) != "undefined") {
+        append1("点击下载","各个重构信号rc",y)
+    }*/
     if(typeof(data.objs.p) != "undefined") {
         append(data.objs.p,"周期项序号(每个周期项由两项构成，p和p+1)")
     }
@@ -171,10 +176,28 @@ function appendTable(data) {
         append(data.objs.ffk1,"频率2")
     }
     if(typeof(data.objs.predict) != "undefined") {
-        append1("点击下载","预测信号")
+        append1("点击下载","预测信号","predict")
     }
 }
 
+//点击数据下载按钮
+function download(id) {
+    if( id == "pwv_before"){
+        window.location.href="/download/"+myvo.objs.pwv_before_name;
+    }
+    if( id == "pwv_after"){
+        window.location.href="/download/"+myvo.objs.pwv_after_name;
+    }
+    if( id == "r"){
+        window.location.href="/download/"+myvo.objs.r_name;
+    }
+    if( id == "sigma"){
+        window.location.href="/download/"+myvo.objs.sigma_name;
+    }
+    if( id == "predict"){
+        window.location.href="/download/"+myvo.objs.predict_name;
+    }
+}
 
 function draw(x, y, i,color) {
 	if(i != 0){
