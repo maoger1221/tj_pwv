@@ -1,6 +1,6 @@
 package tj.pwv.service;
 
-import java.io.File;
+import java.io.*;
 import java.math.BigDecimal;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -261,54 +261,102 @@ public class DataServiceImpl implements DataService {
 
 	//获取绘图数据（pwv）
 	@Override
-	public List<Pwv> getDbDrawingPWV(String date) {
-		PwvExample example = new PwvExample();
-		tj.pwv.pojo.PwvExample.Criteria criteria = example.createCriteria();
-		//查询日期范围
-		if(date != "" && date != null){
-			String[] sdate = date.split("~");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");  
-			try {
-				Date date1 = sdf.parse(sdate[0]);
-				Date date2 = sdf.parse(sdate[1]);
-				criteria.andDateBetween(date1, date2);
-			} catch (ParseException e) {
-				e.printStackTrace();
+	public List<Pwv> getDbDrawingPWV(String date, String ownfilename) {
+		List<Pwv> list = null;
+		//当用户上传自定义文件时
+		if(ownfilename != "" && ownfilename != null) {
+			list = readOwnFile(ownfilename);
+		}else {
+			PwvExample example = new PwvExample();
+			tj.pwv.pojo.PwvExample.Criteria criteria = example.createCriteria();
+			//查询日期范围
+			if (date != "" && date != null) {
+				String[] sdate = date.split("~");
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				try {
+					Date date1 = sdf.parse(sdate[0]);
+					Date date2 = sdf.parse(sdate[1]);
+					criteria.andDateBetween(date1, date2);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			} else {
+				Long count = (long) pwvMapper.countByExample(example);
+				// 取最后10天的数据，即480个
+				criteria.andIdBetween(count - 480 + 1, count);
 			}
-		}else{
-			Long count = (long) pwvMapper.countByExample(example);
-			// 取最后10天的数据，即480个
-			criteria.andIdBetween(count - 480 + 1, count);
+			list = pwvMapper.selectByExample(example);
 		}
-		List<Pwv> list = pwvMapper.selectByExample(example);
 		return list;
 	}
 
-	public ViewObject getDbDrawingPWV(String date, String selectbox) {
-		PwvExample example = new PwvExample();
-		tj.pwv.pojo.PwvExample.Criteria criteria = example.createCriteria();
-		//查询日期范围
-		if(date != "" && date != null){
-			String[] sdate = date.split("~");
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			try {
-				Date date1 = sdf.parse(sdate[0]);
-				Date date2 = sdf.parse(sdate[1]);
-				criteria.andDateBetween(date1, date2);
-			} catch (ParseException e) {
-				e.printStackTrace();
+	public ViewObject getDbDrawingPWV(String date, String ownfilename,String selectbox) {
+		List<Pwv> list = null;
+		//当用户上传自定义文件时
+		if(ownfilename != "" && ownfilename != null) {
+			list = readOwnFile(ownfilename);
+		}else {
+			PwvExample example = new PwvExample();
+			tj.pwv.pojo.PwvExample.Criteria criteria = example.createCriteria();
+			//查询日期范围
+			if (date != "" && date != null) {
+				String[] sdate = date.split("~");
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				try {
+					Date date1 = sdf.parse(sdate[0]);
+					Date date2 = sdf.parse(sdate[1]);
+					criteria.andDateBetween(date1, date2);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			} else {
+				Long count = (long) pwvMapper.countByExample(example);
+				// 取最后10天的数据，即480个
+				criteria.andIdBetween(count - 480 + 1, count);
 			}
-		}else{
-			Long count = (long) pwvMapper.countByExample(example);
-			// 取最后10天的数据，即480个
-			criteria.andIdBetween(count - 480 + 1, count);
+			list = pwvMapper.selectByExample(example);
 		}
-		List<Pwv> list = pwvMapper.selectByExample(example);
 		ViewObject vo = null;
 		if (selectbox != null && selectbox != ""){
 			vo = doAnalysis(selectbox,list);
 		}
 		return vo;
+	}
+
+	private static final String DATAPOSTION1 = "E:\\JetBrains\\IdeaProjects\\tj_pwv\\src\\main\\resources\\upload\\";
+	//读取自定义文件
+	private List<Pwv> readOwnFile(String ownfilename) {
+		File file = new File(DATAPOSTION1 + ownfilename);
+		if (!file.exists()){
+			return null;
+		}
+		List<Pwv> list = new ArrayList<>();
+		BufferedReader br = null;
+		FileReader fr = null;
+
+		try {
+			fr = new FileReader(file);
+			br = new BufferedReader(fr);
+			String str = "";
+			while ((str = br.readLine()) != null) {
+				Pwv pwv = new Pwv();
+				BigDecimal bigDecimal = new BigDecimal(Double.parseDouble(str));
+				pwv.setPw(bigDecimal);
+				list.add(pwv);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				br.close();
+				fr.close();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return list;
 	}
 
 

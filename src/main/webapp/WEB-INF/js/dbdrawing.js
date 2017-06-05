@@ -281,3 +281,26 @@ function transImg(){
 	var imgSrc = document.getElementById("myCanvas").toDataURL("image/png");  
 	document.getElementById("imgId").src = imgSrc;  
 }
+
+
+//ajax上传数据
+$("#owndatabutton").click(
+    function() {
+        // var formData = new FormData($("#uploadForm")[0]);
+        var formData = new FormData();
+        formData.append('file', $('#file')[0].files[0]);
+        $.ajax({
+            url : "/fileUpload",
+            type: 'POST',
+            data: formData,
+            async: false,
+            cache: false,
+            contentType: false,
+            processData: false,
+            success : function(data) {
+                alert(data.objs.msg);
+                $("#owndataHidden").val(data.objs.filename);
+            }
+        });
+
+    });

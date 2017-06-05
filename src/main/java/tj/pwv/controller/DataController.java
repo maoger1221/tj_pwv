@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.apache.commons.io.FileUtils;
@@ -15,12 +17,11 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import tj.pwv.pojo.Mwr2d;
 import tj.pwv.pojo.MwrZenit;
 import tj.pwv.pojo.User;
@@ -74,14 +75,14 @@ public class DataController {
 
     @RequestMapping(value="/getAnalysis", method=RequestMethod.POST)
     @ResponseBody
-    public Object getAnalysis(String date,String drawingbox,String selectbox,HttpSession httpSession){
+    public Object getAnalysis(String date,String drawingbox,String ownfilename,String selectbox,HttpSession httpSession){
         ViewObject vo = new ViewObject();
 
         if (drawingbox.contains("after")) {
-        	vo = dataService.getDbDrawingPWV(date,selectbox);
+        	vo = dataService.getDbDrawingPWV(date,ownfilename,selectbox);
         }
 		if (drawingbox.contains("before")) {
-			vo.set("pwv_before",dataService.getDbDrawingPWV(date));
+			vo.set("pwv_before",dataService.getDbDrawingPWV(date,ownfilename));
 		}
 
 		User user = (User)httpSession.getAttribute("user");
@@ -119,6 +120,7 @@ public class DataController {
 
 
 	private static final String DATAPOSTION = "E:\\JetBrains\\IdeaProjects\\tj_pwv\\src\\main\\resources\\downlfiles\\";
+	private static final String DATAPOSTION1 = "E:\\JetBrains\\IdeaProjects\\tj_pwv\\src\\main\\resources\\upload\\";
 	private static final String FILESUFFIX = ".txt";
     //下载文件
 	@RequestMapping(value = "/download/{filename}", method = RequestMethod.GET)
@@ -133,7 +135,30 @@ public class DataController {
 		return new ResponseEntity<byte[]>(FileUtils.readFileToByteArray(file),headers, HttpStatus.OK);//ie浏览器用这个方法不能下载,将HttpStatus.created改为HttpStatus.OK
 	}
 
+	//上传文件
+	@RequestMapping(value = "/fileUpload")
+	@ResponseBody
+	public Object fileUpload(@RequestParam("file") MultipartFile file) {
+		ViewObject vo = new ViewObject();
+		// 判断文件是否为空
+		if (!file.isEmpty()) {
+			if(file.getSize() > 1024 * 1024 * 2){
+				return "file is bigger than 2MB";
+			}
+			try {
+				// 文件保存路径
+				String filename = new Date().getTime() + file.getOriginalFilename();
+				// 转存文件
+				file.transferTo(new File(DATAPOSTION1 + filename));
 
+				vo.set("msg","success!!");
+				vo.set("filename",filename);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return vo;
+	}
 
 
 

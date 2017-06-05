@@ -29,7 +29,7 @@ public class DrawingController {
 			vo.set("iwvdata",dataService.getDbDrawingMwrZ(date));
 		}
 		if (drawingbox.contains("pwv")) {
-			vo.set("pwvdata",dataService.getDbDrawingPWV(date));
+			vo.set("pwvdata",dataService.getDbDrawingPWV(date,""));
 		}
 		return vo;
 	}
