@@ -7,12 +7,12 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Scanner;
 
 import javax.servlet.http.HttpSession;
-import javax.swing.text.View;
 
 import Jama.Matrix;
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -27,7 +27,6 @@ import tj.pwv.mapper.PwvMapper;
 import tj.pwv.pojo.*;
 import tj.pwv.pojo.Mwr2dExample.Criteria;
 import tj.pwv.utils.arima.ARIMA;
-import tj.pwv.utils.dataformat.PWV;
 import tj.pwv.utils.ssa.SSA;
 import tj.pwv.utils.ssa.SSAUtils;
 
@@ -41,8 +40,12 @@ public class DataServiceImpl implements DataService {
 	private PwvMapper pwvMapper;
 	@Autowired
 	private MwrZenit30minMapper  mwrzenit30minmapper;
+	@Autowired
+	private JedisAdapter jedisAdapter;
 	@Value("${TOTALPERPAGE}")
 	private Integer TOTALPERPAGE;
+	@Value("${PWVKEY}")
+	private String PWVKEY;
 	@Override
 	public List<Mwr2d> getMwr2d(String date,String elev,String azi,String iwv,Integer pageNum,HttpSession httpSession) {
 		// TODO Auto-generated method stub
@@ -227,7 +230,46 @@ public class DataServiceImpl implements DataService {
 		List<Pwv> list = pwvMapper.selectByExample(example);
 		return list;
 	}
-	
+
+	@Override
+	public List<Pwv> getPWVRedis() {
+		List<Pwv> pwvList = new ArrayList<>();
+		int count = (int) jedisAdapter.llen(PWVKEY);
+		List<String> list = null;
+		if (count < 480){
+			list = jedisAdapter.lrange(PWVKEY,0, count);
+		}else {
+			list = jedisAdapter.lrange(PWVKEY,count - 480 + 1, count);
+		}
+		for (String str : list){
+			pwvList.add(JSON.parseObject(str,Pwv.class));
+		}
+		return pwvList;
+	}
+
+//	@Override
+//	public Pwv getLatestPWV() {
+//		PwvExample example = new PwvExample();
+//		Long count = (long) pwvMapper.countByExample(example);
+//		tj.pwv.pojo.PwvExample.Criteria criteria = example.createCriteria();
+//		// 取最后10天的数据，即480个
+//		criteria.andIdBetween(count, count);
+//		List<Pwv> list = pwvMapper.selectByExample(example);
+//		return list.get(0);
+//	}
+
+	@Override
+	public Pwv getLatestPWV() {
+		return pwvMapper.selectLatest();
+	}
+
+	@Override
+	public void insertPWV(List<Pwv> pwvList) {
+		for (Pwv pwv : pwvList){
+			pwvMapper.insert(pwv);
+		}
+	}
+
 	//获取绘图数据（水汽辐射计天顶,30min）
 	@Override
 	public List<MwrZenit30min> getDbDrawingMwrZ(String date) {

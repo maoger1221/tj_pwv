@@ -2,6 +2,7 @@ package tj.pwv.mapper;
 
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import tj.pwv.pojo.Pwv;
 import tj.pwv.pojo.PwvExample;
 
@@ -27,4 +28,7 @@ public interface PwvMapper {
     int updateByPrimaryKeySelective(Pwv record);
 
     int updateByPrimaryKey(Pwv record);
+
+    @Select({"select * from pwv order by id desc limit 0,1"})
+    Pwv selectLatest();
 }
