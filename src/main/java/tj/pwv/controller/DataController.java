@@ -22,10 +22,7 @@ import org.springframework.web.bind.annotation.*;
 
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
-import tj.pwv.pojo.Mwr2d;
-import tj.pwv.pojo.MwrZenit;
-import tj.pwv.pojo.User;
-import tj.pwv.pojo.ViewObject;
+import tj.pwv.pojo.*;
 import tj.pwv.service.DataService;
 import tj.pwv.service.FileService;
 
@@ -39,7 +36,7 @@ public class DataController {
 	//获取分页数据
 	@RequestMapping(value="/getdbdata", method=RequestMethod.POST)
 	@ResponseBody
-	public Object getDbData(String date,String elev,String azi,String iwv,Integer pageNum,String type,HttpSession httpSession){
+	public Object getDbData(String date,String elev,String azi,String iwv,String swv,String prn,Integer pageNum,String type,HttpSession httpSession){
 		if(type == null || type.equals("")){
 			type = (String) httpSession.getAttribute("type");
 		}else{
@@ -50,6 +47,9 @@ public class DataController {
 			return dbData;
 		}else if(type.equals("mwrz")){
 			List<MwrZenit> dbData = dataService.getMwrZ(date,elev,azi,iwv,pageNum,httpSession);
+			return dbData;
+		}else if (type.equals("swv")){
+			List<Swv> dbData = dataService.getSwv(date,elev,azi,swv,prn,pageNum,httpSession);
 			return dbData;
 		}
 		return null;

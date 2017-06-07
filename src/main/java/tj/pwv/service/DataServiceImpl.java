@@ -20,10 +20,7 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 
-import tj.pwv.mapper.Mwr2dMapper;
-import tj.pwv.mapper.MwrZenit30minMapper;
-import tj.pwv.mapper.MwrZenitMapper;
-import tj.pwv.mapper.PwvMapper;
+import tj.pwv.mapper.*;
 import tj.pwv.pojo.*;
 import tj.pwv.pojo.Mwr2dExample.Criteria;
 import tj.pwv.utils.arima.ARIMA;
@@ -42,6 +39,9 @@ public class DataServiceImpl implements DataService {
 	private MwrZenit30minMapper  mwrzenit30minmapper;
 	@Autowired
 	private JedisAdapter jedisAdapter;
+	@Autowired
+	private SwvMapper swvMapper;
+
 	@Value("${TOTALPERPAGE}")
 	private Integer TOTALPERPAGE;
 	@Value("${PWVKEY}")
@@ -217,7 +217,113 @@ public class DataServiceImpl implements DataService {
 		}
 		return list;
 	}
-	
+
+	@Override
+	public List<Swv> getSwv(String date, String elev, String azi, String swv, String prn, Integer pageNum, HttpSession httpSession) {
+		// TODO Auto-generated method stub
+		//设置分页查询
+		if(pageNum == null)
+			pageNum = 1;
+		PageHelper.startPage(pageNum, TOTALPERPAGE);
+		SwvExample example = new SwvExample();
+		//添加查询条件
+		tj.pwv.pojo.SwvExample.Criteria criteria= example.createCriteria();
+		//查询日期范围
+		if(date != "" && date != null){
+			//若session中没有该参数，则放入
+			httpSession.setAttribute("date", date);
+			String[] sdate = date.split("~");
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			try {
+				Date date1 = sdf.parse(sdate[0]);
+				Date date2 = sdf.parse(sdate[1]);
+				criteria.andDateBetween(date1, date2);
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
+		}else{
+			if(httpSession.getAttribute("date") !="" && httpSession.getAttribute("date") !=null){
+				//若session中有该参数，则取出
+				String hdate = (String) httpSession.getAttribute("date");
+				String[] sdate = hdate.split("~");
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+				try {
+					Date date1 = sdf.parse(sdate[0]);
+					Date date2 = sdf.parse(sdate[1]);
+					criteria.andDateBetween(date1, date2);
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			}
+		}
+		//查询高度角范围
+		if(elev != "" && elev != null){
+			httpSession.setAttribute("elev", elev);
+			String[] selev = elev.split("~");
+			criteria.andElevBetween(new BigDecimal(selev[0]), new BigDecimal(selev[1]));
+		}else{
+			if(httpSession.getAttribute("elev") !="" && httpSession.getAttribute("elev") !=null){
+				String helev = (String) httpSession.getAttribute("elev");
+				String[] selev = helev.split("~");
+				criteria.andElevBetween(new BigDecimal(selev[0]), new BigDecimal(selev[1]));
+			}
+		}
+		//查询方位角范围
+		if(azi != "" && azi != null){
+			httpSession.setAttribute("azi", azi);
+			String[] sazi = azi.split("~");
+			criteria.andAziBetween(new BigDecimal(sazi[0]), new BigDecimal(sazi[1]));
+		}
+		else{
+			if(httpSession.getAttribute("azi") !="" && httpSession.getAttribute("azi") !=null){
+				String hazi = (String) httpSession.getAttribute("azi");
+				String[] sazi = hazi.split("~");
+				criteria.andAziBetween(new BigDecimal(sazi[0]), new BigDecimal(sazi[1]));
+			}
+		}
+		//查询综合水汽范围
+		if(swv != "" && swv != null){
+			httpSession.setAttribute("swv", swv);
+			String[] sswv = swv.split("~");
+			criteria.andSwvBetween(new BigDecimal(sswv[0]), new BigDecimal(sswv[1]));
+		}
+		else{
+			if(httpSession.getAttribute("swv") !="" && httpSession.getAttribute("swv") !=null){
+				String hswv = (String) httpSession.getAttribute("swv");
+				String[] sswv = hswv.split("~");
+				criteria.andSwvBetween(new BigDecimal(sswv[0]), new BigDecimal(sswv[1]));
+			}
+		}
+		//查询prn范围
+		if(prn != "" && prn != null){
+			httpSession.setAttribute("prn", prn);
+			String[] sprn = prn.split("~");
+			if (sprn.length == 1){
+				criteria.andPrnBetween(Integer.parseInt(sprn[0]), Integer.parseInt(sprn[0]));
+			}else {
+				criteria.andPrnBetween(Integer.parseInt(sprn[0]), Integer.parseInt(sprn[1]));
+			}
+		}
+		else{
+			if(httpSession.getAttribute("prn") !="" && httpSession.getAttribute("prn") !=null){
+				String hprn = (String) httpSession.getAttribute("prn");
+				String[] sprn = hprn.split("~");
+				if (sprn.length == 1){
+					criteria.andPrnBetween(Integer.parseInt(sprn[0]), Integer.parseInt(sprn[0]));
+				}else {
+					criteria.andPrnBetween(Integer.parseInt(sprn[0]), Integer.parseInt(sprn[1]));
+				}
+			}
+		}
+		List<Swv> list = swvMapper.selectByExample(example);
+		httpSession.setAttribute("pageNum", pageNum);
+		if(httpSession.getAttribute("totalpages")=="" || httpSession.getAttribute("totalpages")==null){
+			PageInfo<Swv> pageInfo = new PageInfo<>(list);
+			httpSession.setAttribute("totalpages", pageInfo.getPages());
+		}
+		return list;
+	}
+
 	//获取绘图数据（实时pwv）
 	@Override
 	public List<Pwv> getPWV() {
@@ -267,6 +373,13 @@ public class DataServiceImpl implements DataService {
 	public void insertPWV(List<Pwv> pwvList) {
 		for (Pwv pwv : pwvList){
 			pwvMapper.insert(pwv);
+		}
+	}
+
+	@Override
+	public void insertSWV(List<Swv> swvList) {
+		for (Swv swv : swvList){
+			swvMapper.insert(swv);
 		}
 	}
 

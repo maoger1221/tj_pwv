@@ -76,10 +76,17 @@ function checkfirst() {
 function append(data) {
 	$("#tbody").children().remove();
 	$.each(data, function(i, record) {
-		var obj = "<tr>" + "<td>" + record.id + "</td>" + "<td>" + record.date
-				+ "</td>" + "<td>" + record.rainflag + "</td>" + "<td>"
-				+ record.iwv + "</td>" + "<td>" + record.elev + "</td>"
-				+ "<td>" + record.azi + "</td>" + "</tr>";
+        if(record.iwv != undefined && record.iwv != "" && record.iwv != null){
+            var obj = "<tr>" + "<td>" + record.id + "</td>" + "<td>" + record.date
+                + "</td>" + "<td>" + record.rainflag + "</td>" + "<td>"
+                + record.iwv + "</td>" + "<td>" + record.elev + "</td>"
+                + "<td>" + record.azi + "</td>" + "</tr>";
+        }else if (record.swv != undefined && record.swv != "" && record.swv != null){
+            var obj = "<tr>" + "<td>" + record.id + "</td>" + "<td>" + record.date
+                + "</td>" + "<td>" +  record.prn + "</td>" + "<td>"
+                + record.swv + "</td>" + "<td>" + record.elev + "</td>"
+                + "<td>" + record.azi + "</td>" + "</tr>";
+        }
 		$("#tbody").append(obj);
 	});
 	$("#tbody").trigger("create");
@@ -98,10 +105,17 @@ $("#querybuttonmwr").click(
 				success : function(data) {
 					$("#tbody").children().remove();
 					$.each(data, function(i, record) {
-						var obj = "<tr>" + "<td>" + record.id + "</td>" + "<td>" + record.date
-								+ "</td>" + "<td>" + record.rainflag + "</td>" + "<td>"
-								+ record.iwv + "</td>" + "<td>" + record.elev + "</td>"
+						if(record.iwv != undefined && record.iwv != "" && record.iwv != null){
+                            var obj = "<tr>" + "<td>" + record.id + "</td>" + "<td>" + record.date
+                                + "</td>" + "<td>" + record.rainflag + "</td>" + "<td>"
+                                + record.iwv + "</td>" + "<td>" + record.elev + "</td>"
+                                + "<td>" + record.azi + "</td>" + "</tr>";
+						}else if (record.swv != undefined && record.swv != "" && record.swv != null){
+							var obj = "<tr>" + "<td>" + record.id + "</td>" + "<td>" + record.date
+								+ "</td>" + "<td>" +  record.prn + "</td>" + "<td>"
+								 + record.swv + "</td>" + "<td>" + record.elev + "</td>"
 								+ "<td>" + record.azi + "</td>" + "</tr>";
+						}
 						$("#tbody").append(obj);
 					});
 					$("#tbody").trigger("create");

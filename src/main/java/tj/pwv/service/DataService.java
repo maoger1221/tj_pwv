@@ -17,5 +17,7 @@ public interface DataService {
 	List<Pwv> getDbDrawingPWV(String date,String ownfilename);
 	ViewObject getDbDrawingPWV(String date,String ownfilename, String selectbox);
 	void insertPWV(List<Pwv> pwvList);
+	void insertSWV(List<Swv> swvList);
 
+    List<Swv> getSwv(String date, String elev, String azi, String swv, String prn, Integer pageNum, HttpSession httpSession);
 }

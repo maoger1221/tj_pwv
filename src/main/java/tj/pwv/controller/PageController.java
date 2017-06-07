@@ -41,6 +41,11 @@ public class PageController {
 		setActive(httpSession,"dbdrawing");
 		return "dbdrawing";
 	}
+	@RequestMapping("/dbdata_swv")
+	public String showDbDataswv(HttpSession httpSession) {
+		setActive(httpSession,"dbdata_swv");
+		return "dbdata_swv";
+	}
 	@RequestMapping("/dataAnalysis")
 	public String showDataAnalysis(HttpSession httpSession) {
 		setActive(httpSession,"dataAnalysis");

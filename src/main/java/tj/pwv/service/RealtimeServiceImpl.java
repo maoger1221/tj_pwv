@@ -7,6 +7,7 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import tj.pwv.pojo.Pwv;
+import tj.pwv.utils.FtpUtil;
 
 import java.io.*;
 import java.math.BigDecimal;
@@ -39,25 +40,42 @@ public class RealtimeServiceImpl implements RealtimeService{
     private String LOCALPATH;
     @Value("${PWVKEY}")
     private String PWVKEY;
-    @Value("${DOWNLOADPOSTION}")
-    private String DOWNLOADPOSTION;
-    @Value("${UPLOADPOSTION}")
-    private String UPLOADPOSTION;
+    @Value("${DOWNLOADPOSITION}")
+    private String DOWNLOADPOSITION;
+    @Value("${UPLOADPOSITION}")
+    private String UPLOADPOSITION;
+    @Value("${DPHFILENAME}")
+    private String DPHFILENAME;
+    @Value("${DPHFILEPOSITION}")
+    private String DPHFILEPOSITION;
+
     @Autowired
     private DataService dataService;
     @Autowired
     private JedisAdapter jedisAdapter;
+    @Autowired
+    private SWVService swvService;
+    //从ftp上下载数据
     @Override
-    public boolean getFtpPwv() {
-        return downloadFile(HOST,PORT,USERNAME,PASSWORD,REMOTEPATH,FILENAME,LOCALPATH);
+    public void getFtpPwv() {
+        FtpUtil.downloadFile(HOST,PORT,USERNAME,PASSWORD,REMOTEPATH,FILENAME,LOCALPATH);
+    }
+
+    @Override
+    public void getFtpSwv() {
+        for (int i = 1; i <= 32; i++) {
+            String prn = "0" + String.valueOf(i);
+            FtpUtil.downloadFile(HOST,PORT,USERNAME,PASSWORD,REMOTEPATH,DPHFILENAME+prn.substring(prn.length()-2),DPHFILEPOSITION);
+        }
     }
 
     @Override
     @Scheduled(fixedRate = 60000)//定时任务1分钟执行一次
     public void handlePwvFile() {
-        System.out.println("scheduled before");
+        System.out.println("pwv before");
 //        deleteDirectory(LOCALPATH);
         getFtpPwv();
+        swvService.getSWV1();//计算swv数据并入库
         List<Pwv> pwvList = readPWVFile(LOCALPATH + FILENAME);//从ftp数据中找出需要入库的数据
         if (pwvList.size()!=0){
             dataService.insertPWV(pwvList);//向mysql中插入数据
@@ -65,14 +83,25 @@ public class RealtimeServiceImpl implements RealtimeService{
             for (Pwv pwv : pwvList){
                jedisAdapter.lpush(PWVKEY, JSONObject.toJSONString(pwv));
             }
-            System.out.println("scheduled执行");
+            handleSwvFile();//pwv更新时swv同时更新
+            System.out.println("pwv执行");
         }
     }
+
+    @Override
+//    @Scheduled(fixedRate = 60000)//定时任务1分钟执行一次
+    public void handleSwvFile() {
+        System.out.println("swv before");
+        getFtpSwv();
+        swvService.getSWV1();//计算swv数据并入库
+        System.out.println("swv执行");
+    }
+
     @Override
     @Scheduled(fixedRate = 3600000)//定时任务10小时执行一次
     public void deleteFiles(){
-        deleteDirectory(UPLOADPOSTION);
-        deleteDirectory(DOWNLOADPOSTION);
+        deleteDirectory(UPLOADPOSITION);
+        deleteDirectory(DOWNLOADPOSITION);
         System.out.println("delete执行");
     }
 
@@ -116,10 +145,10 @@ public class RealtimeServiceImpl implements RealtimeService{
 
                     List<Integer> monthdayList = doy2day(year_read,doy_read);
                     Calendar calendar = Calendar.getInstance();
-                    calendar.set(year_read,monthdayList.get(0),monthdayList.get(1),hour_read,min_read,sec_read);
+                    calendar.set(year_read,monthdayList.get(0)-1,monthdayList.get(1),hour_read,min_read,sec_read);//month从0开始
                     Date date_read = calendar.getTime();
                     //如果从ftp中读取的数据的时间在数据库中最新数据之后
-                    if (latesDate.getTime() < date_read.getTime()){
+                    if (latestPwv == null || date_read.getTime() - latesDate.getTime() > 10000){//相差大于10s，防止有多1s的相同数据出现
                         Pwv pwv = new Pwv();
                         pwv.setDate(date_read);
                         pwv.setTotalzen(new BigDecimal(tzen_read));
@@ -159,7 +188,7 @@ public class RealtimeServiceImpl implements RealtimeService{
 
 
 
-    private List<Integer> doy2day(int year, int doy) {
+    public List<Integer> doy2day(int year, int doy) {
         int flag = 0;
         String temp="";
         List<Integer> list = new ArrayList<>();

@@ -90,6 +90,7 @@
                                 <li><a href="#"><i class="fa fa-comments-o "></i>TJBS</a></li>
                                 <li><a href="#"><i class="fa fa-comments-o "></i>TJJD</a></li>
                             </ul></li>
+                        <li><a class="${dbdata_swv}" href="${pageContext.request.contextPath}/dbdata_swv"><i class="fa fa-code "></i>SWV</a></li>
                         <li><a class="${dbdrawing}" href="${pageContext.request.contextPath}/dbdrawing"><i class="fa fa-desktop "></i>绘图</a></li>
                     </ul></li>
 
